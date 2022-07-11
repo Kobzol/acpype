@@ -2815,7 +2815,7 @@ class AbstractTopol(abc.ABC):
         http://www.mdtutorials.com/gmx/complex/06_equil.html
         """
         self.printDebug("writing POSRE file")
-        posre = "posre_" + self.baseName + ".itp"
+        posre = "posre_" + os.path.basename(self.baseName) + ".itp"
         gmxDir = os.path.abspath(".")
         posreFileName = os.path.join(gmxDir, posre)
         posreFile = open(posreFileName, "w")
